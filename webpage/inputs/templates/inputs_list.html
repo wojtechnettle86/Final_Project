@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <h1>Employees</h1>
+    <ul>
+      {% for item in page_obj %}
+        <li><a href="{% url 'employee_detail' employee.pk %}">{{ item.firstname }} {{ item.lastname }}</a></li>
+        {% empty %}
+        <p>No contacts found.</p>
+      {% endfor %}
+    </ul>
+{% endblock %}

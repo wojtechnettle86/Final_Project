@@ -2,6 +2,7 @@
   <nav>
     <a href="{% url 'core' %}">Home</a>
     <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'inputs_list' %}">Inputs</a>
 
     {% if user.is_authenticated %}
       <a href="{% url 'profile' %}">Profile</a>
