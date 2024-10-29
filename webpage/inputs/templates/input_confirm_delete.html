@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <h1>Opravdu chcete smazat celou otázku s názvem: "{{ object.name }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Ano, smazat</button>
+    </form>
+    <a href="{% url 'inputs_list' %}">Zpět na seznam</a>
+{% endblock content %}

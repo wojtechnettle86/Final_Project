@@ -1,8 +1,14 @@
 from django import forms
-from .models import Employee
+from .models import Input
 
 
-class EmployeeForm(forms.ModelForm):
+class InputForm(forms.ModelForm):
     class Meta:
-        model = Employee
+        model = Input
+        fields = "__all__"
+        exclude = ["doctor", "answer"]
+
+class DoctorForm(forms.ModelForm):
+    class Meta:
+        model = Input
         fields = "__all__"

@@ -4,9 +4,10 @@
     <h1>Employees</h1>
     <ul>
       {% for item in page_obj %}
-        <li><a href="{% url 'employee_detail' employee.pk %}">{{ item.firstname }} {{ item.lastname }}</a></li>
+        <li><a href="{% url 'inputs_detail' item.pk %}">{{ item.question_name }}</a></li>
         {% empty %}
         <p>No contacts found.</p>
       {% endfor %}
     </ul>
+    <a href="{% url 'input_create' %}">Vytvořit</a>
 {% endblock %}

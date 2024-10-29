@@ -1,18 +1,24 @@
 <header>
-  <nav>
-    <a href="{% url 'core' %}">Home</a>
-    <a href="{% url 'about' %}">About</a>
-    <a href="{% url 'inputs_list' %}">Inputs</a>
+  <div class="container">
+    <div class="brand">
+      <img src="" alt="logo" />
+    </div>
+    <nav class="navbar navbar-expand-lg">
+      <a href="{% url 'core' %}">Domů</a>
+      <a href="{% url 'about' %}">O projektu</a>
+      <a href="{% url 'inputs_list' %}">Seznam dotazů</a>
+      <a href="{% url 'input_create' %}">Přidat dotaz</a>
 
-    {% if user.is_authenticated %}
-      <a href="{% url 'profile' %}">Profile</a>
-      <form method="POST" action="{% url 'logout' %}">
-          {% csrf_token %}
-          <button type="submit">Logout</button>
-      </form>
-    {% else %}
-      <a href="{% url 'registration' %}">Registration</a>
-      <a href="{% url 'login' %}">Login</a>
-    {% endif %}
-  </nav>
+      {% if user.is_authenticated %}
+        <a href="{% url 'profile' %}">Profile</a>
+        <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+      {% else %}
+        <a href="{% url 'registration' %}">Registration</a>
+        <a href="{% url 'login' %}">Login</a>
+      {% endif %}
+    </nav>
+  </div>
 </header>
