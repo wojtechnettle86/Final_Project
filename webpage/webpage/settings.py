@@ -119,7 +119,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '/home/wojtechnettle/wojtechnettle.pythonanywhere.com/static'
+STATIC_ROOT = '/home/wojtechnettle/wojtechnettle.pythonanywhere.com/webpage/core/static'
 
 MEDIA_ROOT = 'media'
 
