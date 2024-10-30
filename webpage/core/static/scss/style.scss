@@ -259,3 +259,12 @@ main {
         }
     }
 }
+
+.nonexist {
+    text-align: center;
+
+    .mdi {
+        columns: $primary;
+        font-size: 60px;
+    }
+}

@@ -6,5 +6,8 @@
 
 {% block content %}
     <h1>Požadovaná stránka neexituje</h1>
-    <p class="text-center"><a href="{% url 'core' %}">Návrat na homepage</a></p>
+    <div class="nonexist">
+        <i class="mdi mdi-tools"></i>
+        <p class="text-center"><a class="btn btn-primary" href="{% url 'core' %}">Návrat na homepage</a></p>
+    </div>
 {% endblock %}
