@@ -8,7 +8,16 @@
     <h1>Přidat nový dotaz pro lékaře</h1>
     <form method="POST">
       {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Odeslat</button>
+      <div class="row col-md-8 col-sm-10 col-12 mx-auto">
+        <div class="col-sm-6 col-12">{{ form.firstname.label_tag }} {{ form.firstname }}</div>
+        <div class="col-sm-6 col-12">{{ form.lastname.label_tag }} {{ form.lastname }}</div>
+        <div class="col-sm-6 col-12">{{ form.phone.label_tag }} {{ form.phone }}</div>
+        <div class="col-sm-6 col-12">{{ form.email.label_tag }} {{ form.email }}</div>
+        <div class="col-12">{{ form.question_name.label_tag }} {{ form.question_name }}</div>
+        <div class="col-12">{{ form.question_text.label_tag }} {{ form.question_text }}</div>
+        <div class="col-12">{{ form.doctor.label_tag }} {{ form.doctor }}</div>
+        <div class="col-12">{{ form.answer.label_tag }} {{ form.answer }}</div>
+      </div>
+      <button class="btn btn-primary" type="submit">Odeslat</button>
     </form>
 {% endblock %}
