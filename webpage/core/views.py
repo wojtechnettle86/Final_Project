@@ -25,3 +25,7 @@ def registration(request):
     return render(request,
                   'registration.html',
                   {'form': UserCreationForm()})
+
+
+def privacy_policy(request):
+  return render(request, "privacy_policy.html")

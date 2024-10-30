@@ -14,6 +14,7 @@ class InputForm(forms.ModelForm):
             "email": "Email",
             "question_name": "Název otázky",
             "question_text": "Text otázky",
+            "privacy": "Souhlasím se zpracováním osobních údajů",
         }
         widgets = {
             "firstname": forms.TextInput(attrs={'class':'form-control'}),
@@ -22,12 +23,14 @@ class InputForm(forms.ModelForm):
             "email": forms.TextInput(attrs={'class':'form-control'}),
             "question_name": forms.TextInput(attrs={'class':'form-control'}),
             "question_text": forms.Textarea(attrs={'class':'form-control'}),
+            "privacy": forms.CheckboxInput(attrs={'class':'form-check-input'}),
         }
 
 class DoctorForm(forms.ModelForm):
     class Meta:
         model = Input
         fields = "__all__"
+        exclude = ["privacy"]
         labels = {
             "firstname": "Jméno",
             "lastname": "Příjmení",

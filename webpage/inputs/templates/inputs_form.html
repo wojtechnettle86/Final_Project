@@ -6,7 +6,7 @@
 
 {% block content %}
     <h1>Přidat nový dotaz pro lékaře</h1>
-    <form method="POST">
+    <form method="POST" class="input">
       {% csrf_token %}
       <div class="row col-md-8 col-sm-10 col-12 mx-auto">
         <div class="col-sm-6 col-12">{{ form.firstname.label_tag }} {{ form.firstname }}</div>
@@ -17,7 +17,10 @@
         <div class="col-12">{{ form.question_text.label_tag }} {{ form.question_text }}</div>
         <div class="col-12">{{ form.doctor.label_tag }} {{ form.doctor }}</div>
         <div class="col-12">{{ form.answer.label_tag }} {{ form.answer }}</div>
+        <div class="col-12 text-center">{{ form.privacy }} {{ form.privacy.label_tag }}</div>
       </div>
-      <button class="btn btn-primary" type="submit">Odeslat</button>
+      <div class="text-center">
+        <button class="btn btn-primary btn-lg" type="submit">Odeslat</button>
+      </div>
     </form>
 {% endblock %}

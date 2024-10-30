@@ -9,6 +9,7 @@ class Input(models.Model):
   question_text = models.TextField(max_length=3000)
   doctor = models.CharField(max_length=255)
   answer = models.TextField(max_length=3000)
+  privacy = models.BooleanField(default=False)
 
   def __str__(self):
     return f"{self.question_name}"

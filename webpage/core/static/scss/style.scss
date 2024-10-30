@@ -1,3 +1,5 @@
+$primary: #2a8992;
+
 html {
     height: 100%;
 }
@@ -11,16 +13,15 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-main {
-    height: 100%;
-    flex-grow: 1;
-}
-
 footer {
     background-color: black;
     color: white;
     text-align: center;
     padding: 20px;
+
+    a {
+        color: white;
+    }
 }
 
 header {
@@ -51,11 +52,30 @@ header {
 }
 
 main {
-    padding: 20px 0;
+    padding: 20px 0 40px 0;
+    height: 100%;
+    flex-grow: 1;
 
     h1 {
         text-align: center;
         padding: 20px 0 40px 0;
         color: #2a8992;
     }
+}
+
+.input {
+    .row > * {
+        margin-bottom: 10px;
+    }
+}
+
+.btn-primary {
+    background-color: $primary;
+    border-color: $primary;
+}
+
+.btn {
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 10px 35px;
 }
