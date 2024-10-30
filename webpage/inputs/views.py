@@ -1,5 +1,6 @@
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.shortcuts import render
 from .models import Input
 from .forms import InputForm, DoctorForm
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -18,7 +19,7 @@ class InputCreateView(CreateView):
     model = Input
     form_class = InputForm
     template_name = 'inputs_form.html'
-    success_url = reverse_lazy('inputs_list')
+    success_url = reverse_lazy('input_created')
 
 class InputUpdateView(LoginRequiredMixin, UpdateView, LoggingMixin):
     model = Input
@@ -34,3 +35,6 @@ class InputDeleteView(LoginRequiredMixin, DeleteView):
     model = Input
     template_name = 'input_confirm_delete.html'
     success_url = reverse_lazy('inputs_list')
+
+def input_created(request):
+  return render(request, "input_created.html")

@@ -6,12 +6,24 @@
 
 {% block content %}
     <h1>Seznam dotazů od pacientů</h1>
-    <ul>
-      {% for item in page_obj %}
-        <li><a href="{% url 'inputs_detail' item.pk %}">{{ item.question_name }}</a></li>
-        {% empty %}
-        <p>No contacts found.</p>
-      {% endfor %}
-    </ul>
-    <a href="{% url 'input_create' %}">Vytvořit</a>
+
+    <div class="input-list">
+      <ul>
+        {% for item in page_obj %}
+          <li>
+            <a href="{% url 'inputs_detail' item.pk %}">
+              <div class="p-3">
+                <h5>{{ item.question_name }}</h5>
+                <p class="small">{{ item.question_text|truncatechars:100 }}<br /><span>Zobrazit více</span></p>
+              </div>
+            </a>
+          </li>
+          {% empty %}
+          <p>Žádné otázky nebyly dosud položeny.</p>
+        {% endfor %}
+      </ul>
+      <div class="text-center">
+        <a class="btn btn-primary" href="{% url 'input_create' %}">Položit vlastní dotaz</a>
+      </div>
+    </div>
 {% endblock %}

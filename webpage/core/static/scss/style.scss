@@ -1,4 +1,5 @@
 $primary: #2a8992;
+$light: #f2f2f2;
 
 html {
     height: 100%;
@@ -25,7 +26,7 @@ footer {
 }
 
 header {
-    background-color: #f2f2f2;
+    background-color: $light;
     box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
     height: 80px;
 
@@ -74,8 +75,53 @@ main {
     border-color: $primary;
 }
 
+.btn-outline-primary {
+    border-color: $primary;
+    color: $primary;
+
+    &:hover {
+        background-color: $primary;
+        border-color: $primary;
+        color: white;
+    }
+}
+
 .btn {
     text-transform: uppercase;
     font-weight: 800;
     padding: 10px 35px;
+}
+
+.input-list {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 50px;
+
+        li {
+            background-color: $light;
+            margin-bottom: 15px;
+            transition: all .5s;
+
+            &:hover {
+                box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+                background-color: #eae7e7;
+                transition: all .5s;
+            }
+            
+            h5, p, a {
+                color: black;
+                text-decoration: none;
+            }
+
+            p {
+                margin-bottom: 0;
+
+                span {
+                    text-decoration: underline;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
 }

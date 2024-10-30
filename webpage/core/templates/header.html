@@ -12,14 +12,13 @@
 
     <div class="user">
       {% if user.is_authenticated %}
-        <a href="{% url 'profile' %}">Profile</a>
+        <a href="{% url 'profile' %}">Profil</a>
         <form method="POST" action="{% url 'logout' %}">
             {% csrf_token %}
-            <button type="submit">Logout</button>
+            <button type="submit">Odhlášení</button>
         </form>
       {% else %}
-        <a href="{% url 'registration' %}">Registration</a>
-        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'login' %}">Uživatelský účet</a>
       {% endif %}
     </div>
   </div>

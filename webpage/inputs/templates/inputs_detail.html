@@ -5,14 +5,32 @@
 {% endblock %}
 
 {% block content %}
-  <h1>{{ object.question_name }}</h1>
-  <p>{{ object.firstname }} {{ object.lastname }}</p>
-  <p>{{ object.email }}</p>
-  <p>{{ object.note }}</p>
+  <h1>Detail dotazu</h1>
+  <h3>{{ object.question_name }}</h3>
+  <hr />
+  <p>{{ object.question_text }}</p>
+  <p class="small mb-1">Dotazující: {{ object.firstname }} {{ object.lastname }}</p>
+  <p class="small">Email: {{ object.email }} Telefon: {{ object.phone }}</p>
+  {% if user.is_authenticated and user.is_superuser %}
+  <a href="{% url 'input_update' object.pk %}">Editovat otázku</a>
+  <a href="{% url 'input_delete' object.pk %}">Smazat otázku</a>
+  {% endif %}
 
-{% if user.is_authenticated and user.is_superuser %}
-<a href="{% url 'input_update' object.pk %}">Editovat otázku</a>
-<a href="{% url 'input_delete' object.pk %}">Smazat otázku</a>
-{% endif %}
-<a href="{% url 'inputs_list' %}">Zpět na seznam otázek</a>
+  <div class="bg-light p-3 mb-3">
+    {% if user.is_authenticated and object.answer %}
+      {% if object.doctor %}
+        <p>Odpovídá: {{ object.doctor }}</p>
+      {% endif %}
+      <hr />
+      <p>{{ object.answer }}</p>
+    {% elif user.is_anonymous and object.answer %}
+        <p class="text-center">Pokud chcete zobrazit odpověď, tak se nejprve <a href="{% url 'login' %}">přihlaste</a></p>
+    {% else %}
+        <p class="text-center">Odpověď zatím nebyla přidána.</p>
+    {% endif %}
+  </div>
+
+  <div class="text-center">
+    <a class="btn btn-outline-primary" href="{% url 'inputs_list' %}">Zpět na seznam otázek</a>
+  </div>
 {% endblock %}

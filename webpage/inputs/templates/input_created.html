@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+
+{% block title %}
+    <title>Dotaz byl vytvořen | Aplikace lékař online</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Dotaz byl v pořádku vytvořen</h1>
+    <h5 class="text-center mb-4">Děkujeme za vaši důvěru. Váš dotaz byl v pořádku přidán do databáze dotazů. Náš lékař vám co nejdříve odpoví. Zatím se můžete podívat na dotazy ostatních uživatelů.</h5>
+    <p class="text-center"><a class="btn btn-primary" href="{% url 'inputs_list' %}">Seznam dotazů</a></p>
+{% endblock %}

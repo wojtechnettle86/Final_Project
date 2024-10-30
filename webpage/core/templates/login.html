@@ -5,9 +5,11 @@
 {% endblock %}
 
 {% block content %}
-    <form method="POST">
+    <form method="POST" class="mb-3">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Přihlásit</button>
     </form>
+    <p>Pokud ještě nemáte účet, tak si jej zdarma vytvořte: </p>
+    <a href="{% url 'registration' %}">Registrace</a>
 {% endblock content %}
