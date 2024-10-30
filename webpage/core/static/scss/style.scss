@@ -207,6 +207,11 @@ main {
 .btn-primary {
     background-color: $primary;
     border-color: $primary;
+
+    &:hover {
+        background-color: black;
+        border-color: black;
+    }
 }
 
 .btn-outline-primary {
