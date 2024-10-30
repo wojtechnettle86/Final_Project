@@ -1,7 +1,11 @@
 {% extends "index.html" %}
 
+{% block title %}
+    <title>Přidat dotaz | Aplikace lékař online</title>
+{% endblock %}
+
 {% block content %}
-    <h1>Add Employee form</h1>
+    <h1>Přidat nový dotaz pro lékaře</h1>
     <form method="POST">
       {% csrf_token %}
       {{ form.as_p }}

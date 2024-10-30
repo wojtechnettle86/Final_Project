@@ -1,5 +1,9 @@
 {% extends "index.html" %}
 
+{% block title %}
+    <title>Detail dotazu | Aplikace lékař online</title>
+{% endblock %}
+
 {% block content %}
   <h1>{{ object.question_name }}</h1>
   <p>{{ object.firstname }} {{ object.lastname }}</p>

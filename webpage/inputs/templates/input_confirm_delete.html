@@ -1,5 +1,9 @@
 {% extends "index.html" %}
 
+{% block title %}
+    <title>Smazání stránky | Aplikace lékař online</title>
+{% endblock %}
+
 {% block content %}
     <h1>Opravdu chcete smazat celou otázku s názvem: "{{ object.name }}"?</h1>
     <form method="post">

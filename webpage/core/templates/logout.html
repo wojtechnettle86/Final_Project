@@ -1,5 +1,9 @@
 {% extends "index.html" %}
 
+{% block title %}
+    <title>Odhlášení | Aplikace lékař online</title>
+{% endblock %}
+
 {% block content %}
     <h2>Byl jste v pořádku odhlášen</h2>
     <a href="{% url 'login' %}">Přihlásit znovu</a>

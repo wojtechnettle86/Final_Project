@@ -1,5 +1,9 @@
 {% extends "index.html" %}
 
+{% block title %}
+    <title>Registrace | Aplikace lékař online</title>
+{% endblock %}
+
 {% block content %}
     <form method="POST">
         {% csrf_token %}

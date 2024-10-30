@@ -1,7 +1,11 @@
 {% extends "index.html" %}
 
+{% block title %}
+    <title>Seznam dotazů | Aplikace lékař online</title>
+{% endblock %}
+
 {% block content %}
-    <h1>Employees</h1>
+    <h1>Seznam dotazů od pacientů</h1>
     <ul>
       {% for item in page_obj %}
         <li><a href="{% url 'inputs_detail' item.pk %}">{{ item.question_name }}</a></li>
