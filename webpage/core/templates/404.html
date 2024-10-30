@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+
+{% block title %}
+    <title>Bohužel stránka nenalezena | Aplikace lékař online</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Požadovaná stránka neexituje</h1>
+    <p class="text-center"><a href="{% url 'core' %}">Návrat na homepage</a></p>
+{% endblock %}
