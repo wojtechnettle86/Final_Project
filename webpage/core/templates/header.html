@@ -1,9 +1,14 @@
 <header>
   <div class="container">
-    <div class="brand">
-      <a href="{% url 'core' %}"><img src="/static/img/logo_lekar.png" alt="logo" /></a>
+    <div class="menu">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="mdi mdi-menu"></i>
+      </button>
+      <div class="brand">
+        <a href="{% url 'core' %}"><img src="/static/img/logo_lekar.png" alt="logo" /></a>
+      </div>
     </div>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg" id="main-navbar">
       <a class="nav-item" href="{% url 'core' %}">Domů</a>
       <a class="nav-item" href="{% url 'about' %}">O projektu</a>
       <a class="nav-item" href="{% url 'inputs_list' %}">Seznam dotazů</a>
