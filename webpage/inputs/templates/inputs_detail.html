@@ -9,8 +9,9 @@
   <h3>{{ object.question_name }}</h3>
   <hr />
   <p>{{ object.question_text }}</p>
-  <p class="small mb-1">Dotazující: {{ object.firstname }} {{ object.lastname }}</p>
-  <p class="small">Email: {{ object.email }} Telefon: {{ object.phone }}</p>
+  <p class="small mb-1"><strong>Dotazující:</strong>  {{ object.firstname }} {{ object.lastname }}</p>
+  <p class="small mb-1"><strong>Email:</strong> {{ object.email }} <strong>Telefon:</strong> {{ object.phone }}</p>
+  <p class="small"><strong>Vytvořeno:</strong> {{ object.created_at|date:'d. m. Y H:i' }}</p>
   {% if user.is_authenticated and user.is_superuser %}
   <a href="{% url 'input_update' object.pk %}">Editovat otázku</a>
   <a href="{% url 'input_delete' object.pk %}">Smazat otázku</a>
@@ -19,7 +20,7 @@
   <div class="bg-light p-3 mb-3">
     {% if user.is_authenticated and object.answer %}
       {% if object.doctor %}
-        <p>Odpovídá: {{ object.doctor }}</p>
+        <p><strong>Odpovídá:</strong> {{ object.doctor }}</p>
       {% endif %}
       <hr />
       <p>{{ object.answer }}</p>

@@ -121,7 +121,7 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = '/home/wojtechnettle/wojtechnettle.pythonanywhere.com/webpage/core/static'
 
-MEDIA_ROOT = 'media'
+MEDIA_ROOT = '/home/wojtechnettle/wojtechnettle.pythonanywhere.com/webpage/core/media'
 
 MEDIA_URL='/media/'
 

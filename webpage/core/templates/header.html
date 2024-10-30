@@ -12,10 +12,10 @@
 
     <div class="user">
       {% if user.is_authenticated %}
-        <a href="{% url 'profile' %}">Profil</a>
+        <i class="mdi mdi-account"></i><a href="{% url 'profile' %}">{{ user }}</a>
         <form method="POST" action="{% url 'logout' %}">
             {% csrf_token %}
-            <button type="submit">Odhlášení</button>
+            <button type="submit"><i class="mdi mdi-logout"></i></button>
         </form>
       {% else %}
         <a href="{% url 'login' %}">Uživatelský účet</a>

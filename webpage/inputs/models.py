@@ -10,6 +10,7 @@ class Input(models.Model):
   doctor = models.CharField(max_length=255, null=True, blank=True)
   answer = models.TextField(max_length=3000, null=True, blank=True)
   privacy = models.BooleanField(default=False)
+  created_at = models.DateTimeField(auto_now_add=True)
 
   def __str__(self):
     return f"{self.question_name}"
