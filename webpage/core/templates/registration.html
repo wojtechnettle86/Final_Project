@@ -7,7 +7,7 @@
 {% block content %}
     <div class="register">
         <h1>Registrace nového uživatele</h1>
-        <form method="POST">
+        <form method="POST" onSubmit="return checkPassword(this)">
             {% csrf_token %}
             <div class="row col-md-6 col-sm-12 mx-auto">
                 <div class="col-12">{{ form.username.label_tag }} {{ form.username }} <span class="small">{{ form.username.help_text }}</span></div>
