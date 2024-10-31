@@ -5,10 +5,18 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Registrace nového uživatele</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Registrovat</button>
-    </form>
+    <div class="register">
+        <h1>Registrace nového uživatele</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row col-md-6 col-sm-12 mx-auto">
+                <div class="col-12">{{ form.username.label_tag }} {{ form.username }} <span class="small">{{ form.username.help_text }}</span></div>
+                <div class="col-12">{{ form.password1.label_tag }} {{ form.password1 }} </div>
+                <div class="col-12">{{ form.password2.label_tag }} {{ form.password2 }} <span class="small">{{ form.password2.help_text }} <span class="small">{{ form.password1.help_text }}</span></span></div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary" type="submit">Registrovat</button>
+            </div>
+        </form>
+    </div>
 {% endblock content %}

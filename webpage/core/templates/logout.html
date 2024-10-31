@@ -5,7 +5,10 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Byl jste v pořádku odhlášen</h2>
-    <a href="{% url 'login' %}">Přihlásit znovu</a>
+    <h1>Byl jste v pořádku odhlášen</h1>
+    <div class="text-center">
+        <h4>Můžete se přihlásit znovu.</h4>
+        <a class="btn btn-primary" href="{% url 'login' %}">Přihlásit znovu</a>
+    </div>
 
 {% endblock content %}
