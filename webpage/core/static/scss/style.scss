@@ -268,8 +268,9 @@ main {
     .topic {
         display: flex;
         justify-content: flex-end;
+        align-items: center;
 
-        p {
+        .topic-text {
             background-color: $primary;
             padding: 5px 15px;
             border-radius: 8px;
@@ -278,10 +279,28 @@ main {
             font-weight: 700;
         }
 
+        p:not(.topic-text) {
+            flex-grow: 1;
+            text-align: right;
+        }
+
         @media (min-width: 920px) {
             position: absolute;
             top: 10px;
             right: 10px;
+            flex-direction: column;
+        }
+
+        .mdi {
+            font-size: 30px;
+
+            &.mdi-check {
+                color: rgb(18, 199, 18)
+            }
+
+            &.mdi-close {
+                color: rgb(235, 27, 20)
+            }
         }
     }
 }

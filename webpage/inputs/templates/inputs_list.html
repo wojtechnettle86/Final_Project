@@ -15,7 +15,10 @@
               <div class="p-3">
                 <h5>{{ item.question_name }}</h5>
                 <p class="small">{{ item.question_text|truncatechars:100 }}<br /><span>Zobrazit více</span></p>
-                <div class="topic"><p>Téma: {{ item.question_topic }}</p></div>
+                <div class="topic">
+                  <p class="topic-text">Téma: {{ item.question_topic }}</p>
+                  <p>Odpověď lékaře: {% if item.answer %}<i class="mdi mdi-check"></i>{% else %}<i class="mdi mdi-close"></i>{% endif %}</p>
+                </div>
               </div>
             </a>
           </li>
